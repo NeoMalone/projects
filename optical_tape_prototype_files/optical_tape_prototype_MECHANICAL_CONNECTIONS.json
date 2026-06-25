@@ -1,0 +1,47 @@
+[
+  {
+    "label": "L-brackets/M3 bolts",
+    "source": "dowel_rod_spool_feed",
+    "target": "base_plate"
+  },
+  {
+    "label": "L-brackets/M3 bolts",
+    "source": "dowel_rod_spool_takeup",
+    "target": "base_plate"
+  },
+  {
+    "label": "M3 bolts",
+    "source": "plexiglass_strip_guides",
+    "target": "base_plate"
+  },
+  {
+    "label": "double-sided tape",
+    "source": "main_mcu",
+    "target": "base_plate"
+  },
+  {
+    "label": "double-sided tape",
+    "source": "thermal_printer_module",
+    "target": "base_plate"
+  },
+  {
+    "label": "hot glue",
+    "source": "trimmer_potentiometer_reader",
+    "target": "base_plate"
+  },
+  {
+    "label": "hot glue",
+    "source": "reader_alignment_bracket",
+    "target": "base_plate"
+  },
+  {
+    "label": "press fit / hot glue",
+    "source": "optical_reader_sensor",
+    "target": "reader_alignment_bracket"
+  },
+  {
+    "label": "press fit / hot glue",
+    "source": "illumination_led",
+    "target": "reader_alignment_bracket"
+  }
+]

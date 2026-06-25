@@ -1,0 +1,1207 @@
+{
+  "plan": "- Control electronics: Arduino Uno, breadboard, 5V power supply, wiring, TVout circuit with composite video output.\n- Optical writer: High-brightness LED or low-power laser module, NPN transistor/MOSFET driver, current-limiting resistor, adjustable mounting bracket.\n- Optical reader: Photodiode/phototransistor, fixed illumination source (LED), light-blocking enclosure, resistors, optional comparator for signal conditioning.\n- Mechanical transport: DC gear motor, motor driver board (e.g., L298N), 3D-printed rollers/spools, strip guides, tensioning mechanism, acrylic or wood base plate/frame.\n- Software: Arduino sketches for data encoding, motor control, optical writing, optical reading, data decoding, and TVout display rendering.",
+  "nodes": [
+    {
+      "id": "main_mcu",
+      "name": "Main Controller",
+      "pins": [
+        "Digital I/O",
+        "Analog In",
+        "PWM",
+        "UART",
+        "I2C",
+        "SPI",
+        "5V",
+        "3.3V",
+        "GND",
+        "VIN",
+        "TX",
+        "RX",
+        "Digital ~9",
+        "Analog A0",
+        "Analog A1",
+        "Digital ~5",
+        "Digital 6",
+        "Digital 7",
+        "Analog A2"
+      ],
+      "type": "mcu",
+      "partId": "6494f587-267e-4de7-bd27-e92c37efd699",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Arduino+Uno+R3&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/515P6aYSP4L._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Microcontroller",
+            "value": "ATmega328P"
+          },
+          {
+            "label": "Operating Voltage",
+            "value": "5V"
+          },
+          {
+            "label": "Clock Speed",
+            "value": "16 MHz"
+          },
+          {
+            "label": "Flash Memory",
+            "value": "32 KB (0.5 KB used by bootloader)"
+          },
+          {
+            "label": "SRAM",
+            "value": "2 KB"
+          },
+          {
+            "label": "Digital I/O Pins",
+            "value": "14 (6 with PWM support)"
+          },
+          {
+            "label": "Analog Input Pins",
+            "value": "6 (10-bit ADC)"
+          },
+          {
+            "label": "UART",
+            "value": "1"
+          },
+          {
+            "label": "SPI",
+            "value": "1"
+          },
+          {
+            "label": "I2C",
+            "value": "1"
+          }
+        ],
+        "summary": "The Arduino Uno R3 is a foundational open-source microcontroller board powered by the ATmega328P. It serves as a popular choice for beginners and experienced makers alike due to its simplicity, robust community support, and versatile I/O capabilities. Its 16 MHz clock speed, 32KB Flash, and a range of communication interfaces make it suitable for a wide array of embedded projects.",
+        "sourcing": [
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=LWBNkPxO7HO9sYdzFJClmlwRJPcmKwOmhZkfOY6XBcOfta8xcfpG-wcnNFFAF0r8ZgyCwPdosP6YzSXjZrn3Tap7skVU_82xJ9sdJaCfEOqHz6mmF_9BUz548S72j5MJ-FaSQEVAqqJ00xGh4X6wj0hcgM_EDYvR1PTh5mNjdpfuZrQhKOwSKVuwI3zeJwoj5FFCT8YtNlFZ0KF--k9qWm1uxFaahNS2cF2WjStE1O-Wg08Ov9fxmMdP1H_TXcC4-vLkapAYIfIgm2NskipimM0TlRVFPg",
+            "price": "$19.42857",
+            "vendor": "Avnet"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=Q5vXa09lVOBk81Uypi8cbNsJJXDgRN_jZJZoqjvZbFhnsukO4kWZHzs2FxRR9AdJZ5ZSKcAffiW_2d2ETq2MJwJjNmC_QcAuedBh667MjOTONAetVssLBfhLIns3Zn2tcETyz7WwETGNZug-Y3BrnO4wGOZUkUJo2qFZJ8AvlKtTI8E3zGmf4qPUybZvjCe2rSCqWikSRKIxOd9yYDyFSy1haxXD-m3RsN_88ipmPpFVwQ1pKFnozDlShruqh-DQMERu8YputrRgYKMoIotRRGHej4H0IV4",
+            "price": "$14.28",
+            "vendor": "Rapid Electronics"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=h7Hrd3hQnVV24nTl_k0v2lTkbpfAlB0gjdcMyiTDZ2IqNpOHifttcTZR8vYSHsGCa2kdsPSPO8NO1nN_xLXzcXJkPpSIndS6g0tGOdXagKMJfBarrUrhOjblyG_rwb7sy2DT0BAyOHc5Frthxc3nY1_3Coj_dQpEHEhbGYaJcMySgpUqB_a6kxbMH39zemDUm7SdAKmS6Ws1sBaZ7adqDjphLM2_CvmbVDQZMV_OljSQjWeLuiyvEL5NdSsVBDyYqCvOW3eoaLztoXeoWGt5OJlR_AlDNZo",
+            "price": "$19.13",
+            "vendor": "Schukat"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=rP2RykeDaBG553EE44KVW6uA5G68pat8hxAnfL4Y9tsby1tq63Q-C5ovnl9dRyK_C3buIJijv1Vc7tJ9ML1yERd3owhxazlmsckk06wrNXLvNrtyVfkFOqJyZWj-URSnVZ42Q1HvYSUV7_08dha4TZnVfvXEXUYDe0z4XFNXHvrqqfor3YLdbKYqdvOMskyKXv4qhqE2PkIjgYDrArL1n9QJyWG3Az68yDFTNGrU4agFLs3ApS-N4v56WlMnGbOrugme49G05vWmGpkAZrVhb1bPJqJDoQ",
+            "price": "$20",
+            "vendor": "Mouser"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=a3QhNkxQ_FbZ0j3IMk7g5YXz0hVo4cKaZoocRBd6exZHmhlK8rMJAJK7_uhTZiI7QYPtCu2nqvKMufRBy3N8DsWVY_JjrvRHjjQeiOXwdrsLdjhNjuIoTOTXlYeQVqxAmQFIxO4v-3IgUxLYTdP9RpFSPIt6tqwf5rBBcdJtPSVBS66fjJFE9KaTzS1c5KJP7uYAJr8vrcPG551xokosCpOESaGu-B7vm9BngocBidNQ_GBnE6ySIFKmfX3jO0VFun8qoS5iE43HvFL1mWZFnaQOzaCHLg",
+            "price": "$20",
+            "vendor": "Newark"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=50THd70PNfqvhvIb_VP6tKr2WJVxxdc3lNEXVOP7QPkM3KvtonVl_5r44OS_bvrjF_vGWZ6I5JAc8cxVTe9h0_N_OMZygjbsbmjBgTX9clDUZq4r08kl2Ky7iFt92oooYrbHCPtvYLB1MDVjBxL_5ols5umAoTsA2Ne-uzrGDrZQThBWMQBbCp8759DpUrZlapZbdCoW5FfNoykg6_wWQbuR4765mLbWI1TWBsvajSvQ9QZ8xJKCOX-Dh3V6XFMEdnSB-ToH-KW9ZZawqraXCi_b7g-i0Do",
+            "price": "$16.6338",
+            "vendor": "Worldway Electronics"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=xjzPQM7Tfv5ZfxA_DqxY4E60n2TNDQ5Zlvuy9PS1hRSEGeM_OU3ZTvDhbxLz0wBMcu1A8tsiGIAkhIphppYp2hovKOL1l6p6cnAiYpVj187BaQTGG79Nr3dkrn1TaMZW0iSSDKfJZHplBj5ZYE8jmK84tMfgM5FsV6wVrLpksP_do27J9tDJ3vvqRnm2v4yn4ZmxRG8jk6lsp-YmdApXKmf_zLz7HAzzOcuM3gCVv_BA9nn-FgetEY1LK_wYVFqf4v-9rLZIDxULZAKLs8fGHjW8Rq4",
+            "price": "$26.56",
+            "vendor": "RS (Formerly Allied Electronics)"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=iyY2FKwcD9p9moedRVDZ7reMC79RNpW1pWga7mI886GmeY0WXWciGnocKOQBU2c2xOsqnCM22GPSx78f3xsTwWjRLfhiupxixzg8iI8vpqxojjb-A9XdvlwQ1g0xzwb7jxbgDRkCb2vMX8IcCq5E6Z589kVtBeNLOXQxQHm_MRIirl7ggqx8aMKPvl5ciu8FGfBPrjWEAEI7jY3ynF7C22-rDKP4Gvaqi6MOorA4au6jglUyPiD6H8yj_7GhhWl_5Q-HsyX93_vv-e2vl4VBJu5BN7VJ9w",
+            "price": "$17.34",
+            "vendor": "Verical"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=ZT0tAOJqYhgXkLYEzhd9Vr7pI2aucV6ErTi6riwosTA4rFXn0jvYjAOOCTb8hiUzZkvur0656j1MkTVG-EM1Y2EgcP9wNglQN52HEOkCjiSRGQM4v-SofqogfufplRH_SPpS64mQ-95EIMltZ9NuZVWNHBG0Gu1tN8U9vvt3OKcJ91-cne86AB4TSi8QAS6tFPymFBeG1cJjck48vI17Xzz_jXZNSWiWCUxoFM8Q1XFSmLGxuPDWB6A3PCNVLqMKlsSMdEM09EtVhekmzPeUJ2Sr8YYcBw",
+            "price": "$20",
+            "vendor": "Master Electronics"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=Rko60OFniTbOfgwam21tAbPqK1pDhOnTuzPvNesI8exr1h1TDyWEkDqOBUYthqRiP87n-JaYWCidxms7Do9lD9wLNCrzDWqKAUVn-7nTvwBU8c0nqqnn-iOIB2J59UnePTuKXF5h-9ackWC4jFIMH-Babf87pBd6uMLnX351bhE07Qc9urYLL9pBOZEO-aygiXHJXwsCWWZ8c451r0u4uaoiBE9zLdWdlEFyR6C6n8BqNh-Cu1lcrmO6pqfh8UdQgSKBvvwvV2FNAuS36po2oZ8LS06D_qQ",
+            "price": "$26.1245",
+            "vendor": "Axis Part Limited"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=MVrZbHNFtC2zIVXKcrbbzT1g0OX_WHh_SOg6J16JFD6GbBIPLpTnQcq-zPoNQZBEBP1jZ9sq-iipvY-48XuuNi_C-SQ0Ynjw-LonQ1fr2IiO5wTZ5J7HbOiNImKXrtVbYSYAUjp-0GCu1VvGzaNpEHtzYoyR0sbqU-QbborCVvNmhkaShLM7bHCGrQmJMX8K8dE6laJ21Tr379sIzgRmpVoz4u57IJ09b8vTW2UHwo6zJQalxKbpk63xM3AL9m_-oPmwvyUD8ooneEg9doRfJp7KlpAwdA",
+            "price": "$20",
+            "vendor": "Onlinecomponents.com"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=6acC98hTCKr7HBnyRcsitGHdCqYRFHUhUnD_dV1eF6HQI1lKHLf7e4Q4JdTNnJsA6iKYCdEv-_737pzdQu6mFYpkHlbqkt5LBfRkKX2eNp6wTEPOFD7BYyEPzuOQmo16XMU8d0fjxIbHI58WC1HFKG0uhikMvfBRd6fy6sU6DsofuKmSxbce8wLo8pRR1LRtxHBZQF6rTUDfh0cIXftTRHtxX3LAmH6vekOgesTC3UNm_gDOeps69c-iLU4Fn5SfeYIjrZLolbGn3vYFZ046h5K850YYxgE",
+            "vendor": "Classic Components"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=eH2dP6YegdQkx6alEoMvbtz4R7bCxeXMciJpf43A86HY4xz6UT_PGDLLaUqkTnW_VvrJQ81eqPoguv4K9LeGLr-Rhx14eSzRXsFVEeyfNUGzkz_NgrGDX6TQPcS8HHKGJi1unhFfOq4J_XJgnI8C3tdKd95d1YmBI9HJxfcbTrCfHNz2f8DjEGmXJmTzTAsfH3HqKqUiS-TbQUIYYzGvu23PoKiNZKgP0mSGkGvmE2-9hlTyY14BBjqatUCq7wUHJtYk1wo3Y1xCbCHXgp-nKi_hnQwS3sU",
+            "vendor": "NAC Semi"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=sZmNZ4DWVtdOewPqCpCjeew5geAZYyfXYH5m5GiEZHvnXwP5MTI9yfr7dxQj14V621XudpNHzjhxFzb8kS8lffIQM29SS-i1bQ0K3BBWClfAh8upyvRlWPYam4ue6sCyeMRAIiG37vj-VsqH_cGQRMA5d1ybqE8hAUVnhNuaqVir777YXFLgbf5sXxGh1jgonNroqrP1B4_wVmaTnb_7eE64_ame62QkrT1Tk3-f67FLYF_ejqtojwAJI5kYXzxSDOkzfEfaZee6vYRnfnv2b5EkcuK-VeE",
+            "vendor": "ACDS"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B008GRTSV6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$27.6",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.digikey.com/en/products/detail/arduino/ABX00080/20371542",
+            "price": "$20",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=WDCymAxHJNrg9T58zlgeGhvMDx2FyDfEjoJqdaIkMR7-E_SVOPDvU3xkgVv7rrTnvvGCkam3xv-Vj3VyOXyyDzfgquNvDdNkF-GiEgjCI_6Z-orun_bafPjktZHbZ6o2wojxJWIJtVHw1TA8rN3VhgyDr2n49rGzYdSJ6vqI1vChBFrPFtnnKBBHjbthu3I-md4nFQF5K-vxKgf7Yb75x4g3sijkd7zcnEbPU9YYwL9UVEFquzpW5vgIbMG_v5UD31gf3xvTfUPTlqYp2fRQn55QbpisFw",
+            "price": "$18.95",
+            "vendor": "Jameco"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=XC3Pa0RudNoHz2nMtU3o3ldJYAVYP_3XX6FrF2ekMB6s59a12qrdo820CCy_MyVIy917wWvZoc1Lrbzse-OKRb--40YHJfDJTri45yRgNbYYRZGIrk7pLoXeion4HdjCdWvYbJc5FE1wyvfb-U-08r-vW0LelxtjaOdV8TrW0GLqiVy5kfogQ3Ejk_fhFt4gkzxNcEV878A1ACBszR5IgOCqIamNBGD7LAJS987SCbXEIOdy__vBGh-Fvtphu_agOggqbyaoOWmDtJC8Dsp_Pee0zIbYYw",
+            "price": "$17.37",
+            "vendor": "Arrow Electronics"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=JrBJ1l5bKM6iCxGYfYJfv7ZQ37gStHRZQvzUaMcQpv0ESTaZQY77DrVzB7GqqLN2WpCeYuZs503_2lDqvTbBjKLptlUyordRbGQXIuJYFZmI54JSvEwASGGAKt990s4XTy8jda6iuc0JgeZ860KITi9UOkgDsMSfT4ukY3d695l0qhrf0mfbxxLHsOtO04Yj7e5Cqk3NqyghkQL6xMrSIIwEwOOXL_jMlkrXFD8Sds5vCtEibe30rsNWMyoLI7v7piXSmikFi-ykTb7l4BD1YLOfVqBX",
+            "price": "$20",
+            "vendor": "DigiKey"
+          },
+          {
+            "url": "https://octopart.com/opatz8j6/a1?t=FA0LO29cp4scU3-Yv7SaiCf6ede4CqdWjZxOVNr_VO7zMxjnqrKgp3EE_NH_9nQ1Ic3ARjyDRdlm_iRfNKYG429zD_WI0EdfwHn_-C4AAHpzn7R_Em5JRDtsBcPOedFEWOfk0q-1yCilEEXlqmhHF8EoBclR8k10YXrPMSt-gFrZ2mjsDiWTxzMQxBNcmcvCHOOrWHltaLT6C4ROgF9MuoQzvYQ39yAqweL5mHAslpnuX0nQivAyWsgi4vzdZyRJNF0qp9HxH87DCytNS2uyS2hV4aH7ozs",
+            "price": "$19.32",
+            "vendor": "Conrad"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005010759314914.html?pdp_npi=6%40dis%21USD%2162.15%2129.21%21%21%21420.20%21197.49%21%402151fd3a17793531649943049e0fea%2112000053415816891%21affd%21%21%21%211%210%21",
+            "price": "$29.21",
+            "vendor": "AliExpress"
+          }
+        ],
+        "datasheetUrl": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5407/ABX00080.pdf"
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B008GRTSV6?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "68.6x53.4x15mm",
+      "position3d": {
+        "x": 230,
+        "y": 18,
+        "z": 100
+      },
+      "boundingBox": {
+        "depth": 53.4,
+        "width": 68.6,
+        "height": 15
+      },
+      "description": "ARDUINO UNO R4 MINIMA",
+      "productName": "Arduino Uno R3",
+      "purchaseUrl": "https://octopart.com/opatz8j6/a1?t=Q5vXa09lVOBk81Uypi8cbNsJJXDgRN_jZJZoqjvZbFhnsukO4kWZHzs2FxRR9AdJZ5ZSKcAffiW_2d2ETq2MJwJjNmC_QcAuedBh667MjOTONAetVssLBfhLIns3Zn2tcETyz7WwETGNZug-Y3BrnO4wGOZUkUJo2qFZJ8AvlKtTI8E3zGmf4qPUybZvjCe2rSCqWikSRKIxOd9yYDyFSy1haxXD-m3RsN_88ipmPpFVwQ1pKFnozDlShruqh-DQMERu8YputrRgYKMoIotRRGHej4H0IV4",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRzEXtIEgqBTdVzZtJ7VYXnNYUsNM4wDrsjP6UhYQpDlMtbjV85ZWuoZh4G1rqQnUsqHcdWtg6FfO3gRY4V7XQCAuZNRdZrTI3Q73TvnXiOGwSB1QbG7tMTKoiBngYOPjEzqmR1noNuGL5Bub82uq8CDBTODfo5qI3p3wb8mkOYswe6E6AYZKmCdLPqMqRohaypdzXoyz6zQyes6lER5Y3Yj5a5XspiFn4Nlsfx5vWXxmTpqmuue6UklgKA4gXRdxI7zcgZHqgwtIVU2XIUR9z41nE4kPnzBWn6vDF2vsXN9B66pVE5hISyXvjFGvFI4NExhWv8aLCl0FxfOJVKPrpTxSierk1ydygzdSeFMFckUSknwp0oymPYk0V7ykVR2UsBO7AU4jaf4RYvxHwjbY5oyghghyMSJuQtoWyKfeYWFVuLILogVxs3FQNRZJ95R72kuan8lKbfhUWgG12KOg1NvNcCWTaw9YXC4Lh7vH6EhPl2JOWWc7nHbFmcHDL5U4wlNKd0Fxm57ipbZsZNye0GQPGpV93e4PH9Y4gQHixXUhhI0LzrrdMWIkkOv8PjRpcIVuqOlkaneE2A0zeszWBvIlGjy4t5BYV7Rnfyj2X4MSAci6kLK4Gs4oZDTaEdcsBCIdPOjJOTsfr5vDD8fNKjD",
+      "estimatedCost": 25
+    },
+    {
+      "id": "system_power_supply",
+      "name": "DC Power Adapter",
+      "pins": [
+        "DC Barrel Jack"
+      ],
+      "type": "power",
+      "partId": "7dffb182-bc28-4fc2-befe-eeedf17c2bf3",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=12V+1A+DC+Power+Adapter&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41UTAUQ4zNL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Input Voltage Range",
+            "value": "100-240V AC"
+          },
+          {
+            "label": "Output Voltage",
+            "value": "12V DC"
+          },
+          {
+            "label": "Maximum Current",
+            "value": "1A"
+          },
+          {
+            "label": "Efficiency",
+            "value": ">80%"
+          },
+          {
+            "label": "Output Ripple & Noise",
+            "value": "<100mVp-p"
+          }
+        ],
+        "summary": "This 12V 1A DC Power Adapter converts standard AC mains voltage into a stable 12V DC output, providing up to 1 amp of current. It is designed to power individual IP cameras or other low-power 12V DC devices requiring a constant voltage source. The adapter typically features a DC barrel jack for connectivity and offers high efficiency to minimize energy waste.",
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07VQHYGRD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$6.98",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005005815301733.html?pdp_npi=6%40dis%21USD%212.98%212.98%21%21%212.98%212.98%21%40214114e317797171100628540e10eb%2112000034447847789%21affd%21%21%21%211%210%21",
+            "price": "$2.98",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0DJ77SYWJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.29",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07VQHYGRD?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "70x40x30mm",
+      "position3d": {
+        "x": 330,
+        "y": 15,
+        "z": 75
+      },
+      "boundingBox": {
+        "depth": 40,
+        "width": 70,
+        "height": 30
+      },
+      "description": "Provides 12V DC power for each individual IP camera.",
+      "productName": "12V 1A DC Power Adapter",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvJrrdGDGyzVue3QCy4pBvXunMb3LkxvmVDye6h8IBiRkHtJ4Gm5qJEfGSA2oxLYLTrzngzDGg7wbASGZyOeXlWPXDIKT61diDDYp4CvzDB28DBKcdBWutF4el0HZ0yAlY0XCtapAY8iejrwBAJQujtZnh6BoO0P9qzgH9qYees3NResgYlD0vAAXnQPLGJjbkl8jxMKoEYo4v9c9NBRBFOqlrb3oGv5iv83z5dFv2KhFaLZZ0Fujt2UWFDFClSRAfR2gEs1CdlvmO2yBpZW7je5GqzpJ5tdnYxekNZ0b11URLRJakLUV3BtbDWpnFBWCXvLHRIkUW37a0IzpDXqqWCRu5SjncSC9kVnUgJDh2t5MSGSycgw79xxlNfFLYa89uAA8sxlRFFo8dAkA7VTNaN0Rh8BbYK0JcY02QT2k6GzEcKrxGGADbuSqEXbbQVIlZdWzLbGNgNMz5jTj7rXMq3LTVV3mt5x7YvfTyDK9pMt3iVFXQjwvBaInTAMRuNrcFn00bPkvqwYptqvA0UZWyJvM4rTLjbj2LnoSVUR2nItuexzfoRWIWM6SM3cLcjU8sr52ysilmRBSVzg4ajYwC5ncR4Xn9XA2FrLMrIL7NPsUVTt4HF4JCwFWx8zIXq91YPTb91aDsSOHNExnazRkeHH",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxvJrrdGDGyzVue3QCy4pBvXunMb3LkxvmVDye6h8IBiRkHtJ4Gm5qJEfGSA2oxLYLTrzngzDGg7wbASGZyOeXlWPXDIKT61diDDYp4CvzDB28DBKcdBWutF4el0HZ0yAlY0XCtapAY8iejrwBAJQujtZnh6BoO0P9qzgH9qYees3NResgYlD0vAAXnQPLGJjbkl8jxMKoEYo4v9c9NBRBFOqlrb3oGv5iv83z5dFv2KhFaLZZ0Fujt2UWFDFClSRAfR2gEs1CdlvmO2yBpZW7je5GqzpJ5tdnYxekNZ0b11URLRJakLUV3BtbDWpnFBWCXvLHRIkUW37a0IzpDXqqWCRu5SjncSC9kVnUgJDh2t5MSGSycgw79xxlNfFLYa89uAA8sxlRFFo8dAkA7VTNaN0Rh8BbYK0JcY02QT2k6GzEcKrxGGADbuSqEXbbQVIlZdWzLbGNgNMz5jTj7rXMq3LTVV3mt5x7YvfTyDK9pMt3iVFXQjwvBaInTAMRuNrcFn00bPkvqwYptqvA0UZWyJvM4rTLjbj2LnoSVUR2nItuexzfoRWIWM6SM3cLcjU8sr52ysilmRBSVzg4ajYwC5ncR4Xn9XA2FrLMrIL7NPsUVTt4HF4JCwFWx8zIXq91YPTb91aDsSOHNExnazRkeHH",
+      "estimatedCost": 8
+    },
+    {
+      "id": "illumination_led",
+      "name": "Reader Illumination LED",
+      "pins": [
+        "Anode",
+        "Cathode"
+      ],
+      "type": "actuator",
+      "partId": "c3e87c9a-4414-4acd-aac1-a0beb43e34d2",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=5mm+White+LED&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://m.media-amazon.com/images/I/41edI1V8oOL._SL500_.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B07T5K4M8B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.98",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005005975215427.html?pdp_npi=6%40dis%21USD%2110.51%213.68%21%21%2171.08%2124.88%21%402151fd2c17794437783388538e1007%2112000035959086436%21affd%21%21%21%211%210%21",
+            "price": "$3.68",
+            "vendor": "AliExpress"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B07T5K4M8B?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5x5x8mm",
+      "position3d": {
+        "x": 150,
+        "y": 20,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 5,
+        "width": 5,
+        "height": 8
+      },
+      "description": "First white navigation light, powered by 12V via driver.",
+      "productName": "5mm White LED",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIC9ulR5Z8hWQRUlQByfGdNhO90Mx0qPrDJ7GWB3ZYRCLIV7Opnt2WSg86ekNES9GOBDQgIZc1z08mtHXGN5qmYrjJ4V43Xv0REK3hyMjD93qdrjTKukZGkHnvGTioUwqiaj9nOfxRcEktVmkgnu2m7ZKXC0ydOnHQ2iYsav6Y3pg1drNLzDvu3i2kc4k19wsqHF0cvxRr4CasPX3pppVu27hZmNY0ZshpmXFmccUqysMcAG6gcbHLTAX0iJQBCLDJk318EtbR9bPvryvWmvcSJBAD9DRuZQDlXB7llYFppayer4sKhw1UGtT4JRhPsZMJsmLiyVXNrBcxoQFiWOGK8PhA4PKt7qZB4CRt21gEE67IlxRYXRVTtOOnZ54nf6YOzLPWcJN0I6Mglafo5rc2NNgh2rNCnXtQJH27ojGeRIJtFI0PMcDAls1SS3uJCWWZLXPyYouFGtYIYxbXxtZ7uBdUsWpHZmkU7N2uHVeK7zT38nX3NBoJzVkP0oEUrjV9yuMvcWXeNx16YaqZD9cQX6ZjdcBoDTmyPl12QlTPyZP5N9eSW4Wki1lsYx5o1TSj0Ma3sLCr1uc1QvJ2ZQbm2QEsE21aPBrPLTnCnJlrkpMTtdCZAlnSOQMC73msnoR57vZiKNkRruj2gsxheXiUrp",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxIC9ulR5Z8hWQRUlQByfGdNhO90Mx0qPrDJ7GWB3ZYRCLIV7Opnt2WSg86ekNES9GOBDQgIZc1z08mtHXGN5qmYrjJ4V43Xv0REK3hyMjD93qdrjTKukZGkHnvGTioUwqiaj9nOfxRcEktVmkgnu2m7ZKXC0ydOnHQ2iYsav6Y3pg1drNLzDvu3i2kc4k19wsqHF0cvxRr4CasPX3pppVu27hZmNY0ZshpmXFmccUqysMcAG6gcbHLTAX0iJQBCLDJk318EtbR9bPvryvWmvcSJBAD9DRuZQDlXB7llYFppayer4sKhw1UGtT4JRhPsZMJsmLiyVXNrBcxoQFiWOGK8PhA4PKt7qZB4CRt21gEE67IlxRYXRVTtOOnZ54nf6YOzLPWcJN0I6Mglafo5rc2NNgh2rNCnXtQJH27ojGeRIJtFI0PMcDAls1SS3uJCWWZLXPyYouFGtYIYxbXxtZ7uBdUsWpHZmkU7N2uHVeK7zT38nX3NBoJzVkP0oEUrjV9yuMvcWXeNx16YaqZD9cQX6ZjdcBoDTmyPl12QlTPyZP5N9eSW4Wki1lsYx5o1TSj0Ma3sLCr1uc1QvJ2ZQbm2QEsE21aPBrPLTnCnJlrkpMTtdCZAlnSOQMC73msnoR57vZiKNkRruj2gsxheXiUrp",
+      "estimatedCost": 0.1
+    },
+    {
+      "id": "optical_reader_sensor",
+      "name": "Optical Reader Phototransistor",
+      "pins": [
+        "Collector",
+        "Emitter"
+      ],
+      "type": "sensor",
+      "partId": "6e14e54f-299f-4838-ac12-4b1db483b878",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=L-3DP3C+Phototransistor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/MgTDTzk-m77nuZ6E4FUVtmLlC5YmMaCzo1ANXKCHEmo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2t6SUFB/T1N3VlY5bFVmSGQv/cy1sNTAwLmpwZw",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/dp/B00W2Y9UDU?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "5x5x6mm",
+      "position3d": {
+        "x": 150,
+        "y": 10,
+        "z": 70
+      },
+      "boundingBox": {
+        "depth": 5,
+        "width": 5,
+        "height": 6
+      },
+      "productName": "L-3DP3C Phototransistor",
+      "purchaseUrl": "https://www.amazon.com/s?k=phototransistor+L-3DP3C",
+      "aliexpressUrl": "https://s.click.aliexpress.com/e/_c3bmZyR3",
+      "estimatedCost": 0.7,
+      "research": {
+        "specs": [
+          {
+            "label": "Wavelength Sensitivity Range",
+            "value": "400 nm - 1100 nm (broad spectrum, peaking in near-infrared)"
+          },
+          {
+            "label": "Output Interface",
+            "value": "Analog current (collector current proportional to incident light)"
+          },
+          {
+            "label": "Operating Voltage (Collector-Emitter)",
+            "value": "Typically 5V to 30V (Max Vceo)"
+          },
+          {
+            "label": "Response Time (Rise/Fall)",
+            "value": "Typically 10 μs - 50 μs"
+          },
+          {
+            "label": "Power Consumption",
+            "value": "Low (mA range, depends on incident light and load resistance)"
+          },
+          {
+            "label": "Accuracy/Precision",
+            "value": "Good linearity for relative light intensity, not typically used for absolute radiometric accuracy."
+          },
+          {
+            "label": "Resolution",
+            "value": "Analog; determined by subsequent ADC resolution if digitized."
+          }
+        ],
+        "summary": "The L-3DP3C Phototransistor is an optical sensor designed to convert incident light into an electrical current. It acts as a light-controlled switch or variable resistor, providing an analog output proportional to the light intensity. In this project, it serves as the second optical reader for the thermal printer, enabling a more compact and streamlined tape path by detecting the presence or absence of markings on the thermal paper.",
+        "sourcing": []
+      }
+    },
+    {
+      "id": "electrolytic_capacitor_power",
+      "name": "Power Decoupling Capacitor",
+      "pins": [
+        "+",
+        "-"
+      ],
+      "type": "power",
+      "partId": "09d5fc39-c8b5-446b-9826-a56fcbf30489",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=470uF+16V+Electrolytic+Capacitor&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/S1de198e1057a46ddae9f762f77ae81a1I.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Capacitance",
+            "value": "470 uF"
+          },
+          {
+            "label": "Rated Voltage",
+            "value": "16 V DC"
+          },
+          {
+            "label": "Tolerance",
+            "value": "Typically ±20%"
+          },
+          {
+            "label": "Operating Temperature Range",
+            "value": "-40°C to +85°C (typical)"
+          },
+          {
+            "label": "Equivalent Series Resistance (ESR)",
+            "value": "Varies by manufacturer and series (e.g., 0.1-1 Ohm for general purpose)"
+          },
+          {
+            "label": "Leakage Current",
+            "value": "Typically < 0.01CV or 3 uA (whichever is greater)"
+          },
+          {
+            "label": "Ripple Current Rating",
+            "value": "Varies by manufacturer and size (e.g., 200-500 mA RMS at 120Hz)"
+          }
+        ],
+        "summary": "This 470uF 16V electrolytic capacitor is designed to store and release electrical charge, effectively smoothing power line fluctuations. Placed across power rails, it prevents voltage drops during peak current demands from components like LED strips. Its primary role is to ensure a stable and clean power supply, protecting sensitive electronics like the ESP32 from noise and transients.",
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005006996181892.html?pdp_npi=6%40dis%21USD%216.27%213.07%21%21%2142.30%2120.73%21%400b8ded7b17811393074796790e1090%2112000038988334585%21affd%21%21%21%211%210%21",
+            "price": "$3.07",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0F8C43XK9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$5.99",
+            "vendor": "Amazon"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0F8C43XK9?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "8x8x12mm",
+      "position3d": {
+        "x": 200,
+        "y": 8,
+        "z": 130
+      },
+      "boundingBox": {
+        "depth": 8,
+        "width": 8,
+        "height": 12
+      },
+      "description": "Large electrolytic capacitor placed across the power lines (5V and GND) near the LED strip power input to smooth power fluctuations and prevent voltage drops during high current draws, protecting the strip and ESP32.",
+      "productName": "470uF 16V Electrolytic Capacitor",
+      "purchaseUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQym5ahAT75IF07Q6Ao4n56TDdXOeHHLtaTgebF4HfYqlD5sWSC3y4AG3VRW7ul9Isy3IU616HXmF2DVQAaJFmhhOFbu6oStuCHj8Iaw7P7WyUPIgC9CtwJmXaD1M6PEvbvXnDBNUw6m9FqSZzi8wKc4PRNcSw3n6khvBLaGjkaYUhxlgfPbwDDLMLSMXXPXVJsWDTHhoTNNTxed3FXwlBBRI88ZJ9vWQpGBDxzpuEYzRZFoyEXhAfpvToc7Fd7NcWo1CT4NEu7gc928fTFXqulDu5jzASo7mVvfXITnImd0KPFITeBdk03BqP3HX5lYXf2pPVtkwDlK4gdxA9vAa9xD7q5YcgAGyMoGBkoFZcmXHxNWPTVXrfh2JYPUxzONEqJBHSH8QksSBZ8mRAVgkAaUCW2JqiMesK8pmtxWVH8i8OS10FYLwZA1QzRSMtjnGWqhGrywHnVCL9pjXsQ9AQPm1QjC6ysx5C1yNmt9QxndnmTbRK4dL5US3SeUnU7jomVULq0tHPN5MCOu1gVTB2G2lapzwzf8hA75FLMFABtoP3S9cWVWdkvxtV6JgHkltsuqTApgKjan7aI3L0z10pvY38hsoVl0aPUAOhd5NBlVGeKIuMHttiAPwnUCYKAMR51kfNJzZcb2PRMsJqcgpBkr",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxQym5ahAT75IF07Q6Ao4n56TDdXOeHHLtaTgebF4HfYqlD5sWSC3y4AG3VRW7ul9Isy3IU616HXmF2DVQAaJFmhhOFbu6oStuCHj8Iaw7P7WyUPIgC9CtwJmXaD1M6PEvbvXnDBNUw6m9FqSZzi8wKc4PRNcSw3n6khvBLaGjkaYUhxlgfPbwDDLMLSMXXPXVJsWDTHhoTNNTxed3FXwlBBRI88ZJ9vWQpGBDxzpuEYzRZFoyEXhAfpvToc7Fd7NcWo1CT4NEu7gc928fTFXqulDu5jzASo7mVvfXITnImd0KPFITeBdk03BqP3HX5lYXf2pPVtkwDlK4gdxA9vAa9xD7q5YcgAGyMoGBkoFZcmXHxNWPTVXrfh2JYPUxzONEqJBHSH8QksSBZ8mRAVgkAaUCW2JqiMesK8pmtxWVH8i8OS10FYLwZA1QzRSMtjnGWqhGrywHnVCL9pjXsQ9AQPm1QjC6ysx5C1yNmt9QxndnmTbRK4dL5US3SeUnU7jomVULq0tHPN5MCOu1gVTB2G2lapzwzf8hA75FLMFABtoP3S9cWVWdkvxtV6JgHkltsuqTApgKjan7aI3L0z10pvY38hsoVl0aPUAOhd5NBlVGeKIuMHttiAPwnUCYKAMR51kfNJzZcb2PRMsJqcgpBkr",
+      "estimatedCost": 0.2
+    },
+    {
+      "id": "trimmer_potentiometer_reader",
+      "name": "Reader Sensitivity Potentiometer",
+      "pins": [
+        "Wiper",
+        "End1",
+        "End2"
+      ],
+      "type": "module",
+      "partId": "b4290bcb-ebc4-465b-b82d-e4e820ad6376",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=10K+Ohm+Trimmer+Potentiometer&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://cdn-shop.adafruit.com/640x480/4133-03.jpg",
+      "quantity": 1,
+      "research": {
+        "sourcing": [
+          {
+            "url": "https://www.amazon.com/dp/B08MDHD8TJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$7.18",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.aliexpress.com/item/1005006157105408.html?pdp_npi=6%40dis%21USD%213.95%212.57%21%21%2126.57%2117.28%21%4021013cc017801225500283722e11a6%2112000036030876821%21affd%21%21%21%211%210%21",
+            "price": "$2.57",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.adafruit.com/product/4133",
+            "price": "$1.25",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/4133",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B08MDHD8TJ?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "10x10x5mm",
+      "position3d": {
+        "x": 260,
+        "y": 8,
+        "z": 130
+      },
+      "boundingBox": {
+        "depth": 10,
+        "width": 10,
+        "height": 5
+      },
+      "description": "Measures the angular position of the thumb proximal joint.",
+      "productName": "10K Ohm Trimmer Potentiometer",
+      "purchaseUrl": "https://www.adafruit.com/product/4133",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxRpVZaSqoLbWuASkiNU32aipvV0duyGhZVM4ozWLqxloHkMsUFfRJlsqHmxs8pIIdIOOJ26wzQl5fOiik2nSmqqqJvJfHtFoNIGbkgG2TiqMfqPKw4yBJPZt6BqSSrQPdlSkAjCwcBtG12RKLRj4pU0F0ZQQfGmg3QDiMPhOVkmixrPtChkv0jgAUqSowxZPiX3PFc7vm54xzTaZTKTySQxD40CV1trlzB9VFeKpDDjw2EZ74980awPLWFW18olAVr63Pr9wgqCeSNQpFilgEnVovZGZX95bCfeH56MMpUVurUUyikytLECDHNYODmgFrp30bSS7SE8EWv7BDZIsKnAmOmtgM39BJsKynDSPlfkGGkcjWXQVE7AVaR1NUN4OS6qi7ZWfbg3LvZ39ASSFT6z35jPdb4WTud9xu8DAmRSmqGM9Mt1M7wg7jKJhPSI7uBjNd7hOs4HJCSliKZGnoacYV1RblD1dcmuoOD9P5hJNz3js61eAdOKRJJnRBFkRFqJai9FvLHXSBIHwzgSxRydC7FQfF2L8m2qbABflg7BnLTsaZgxwwT5u5LajW01aAxjNbOiQ53nClhudIp3JzSoLysXGaCeEjf2uOodLlAT1pX1JJGXUg1gz06GkQCvI71sQeECoUgNF15k5xOP2gIXD",
+      "estimatedCost": 0.3
+    },
+    {
+      "id": "base_plate",
+      "name": "Main Base Plate",
+      "type": "structural",
+      "partId": "ab7fc85d-32e7-46c4-94b7-f5b71f7710e9",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Acrylic+Sheet+Black&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "imageUrl": "https://cdn-shop.adafruit.com/product-videos/640x480/4749-02.jpg",
+      "material": "Acrylic",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Material",
+            "value": "Cast Acrylic (PMMA)"
+          },
+          {
+            "label": "Color",
+            "value": "Black (Opaque)"
+          },
+          {
+            "label": "Length",
+            "value": "300 mm"
+          },
+          {
+            "label": "Width",
+            "value": "200 mm"
+          },
+          {
+            "label": "Thickness",
+            "value": "3 mm"
+          },
+          {
+            "label": "Approximate Weight",
+            "value": "212 g (0.47 lbs)"
+          },
+          {
+            "label": "Profile Type",
+            "value": "Flat Rectangular Sheet"
+          },
+          {
+            "label": "Thickness Tolerance",
+            "value": "+/- 0.3 mm"
+          },
+          {
+            "label": "Length/Width Tolerance",
+            "value": "+/- 1 mm"
+          },
+          {
+            "label": "Hole/Slot Patterns",
+            "value": "Customizable; typically features M3/M4 mounting holes for controllers, sensors, servos, and LED mounts, with precise layout determined by specific component placement and system design."
+          }
+        ],
+        "summary": "This black acrylic sheet serves as the foundational base for mounting all components of the smart parking system. Its rigid, flat rectangular profile provides a stable platform, ensuring proper alignment and support for the Main Controller, sensors, servos, and LED indicators. The sheet is readily customizable for drilling and cutting specific mounting patterns tailored to the project's layout.",
+        "sourcing": [
+          {
+            "url": "https://www.aliexpress.com/item/1005006426116778.html?pdp_npi=6%40dis%21USD%2115.06%217.08%21%21%21101.85%2147.87%21%402151fce817793326208574726e0f9b%2112000037124062421%21affd%21%21%21%211%210%21",
+            "price": "$7.08",
+            "vendor": "AliExpress"
+          },
+          {
+            "url": "https://www.amazon.com/dp/B0BYSBGNYB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+            "price": "$23.99",
+            "vendor": "Amazon"
+          },
+          {
+            "url": "https://www.adafruit.com/product/4749",
+            "price": "$5.95",
+            "vendor": "Adafruit"
+          }
+        ],
+        "documentationUrls": [
+          {
+            "url": "https://www.adafruit.com/product/4749",
+            "title": "Product Page (Adafruit)"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/dp/B0BYSBGNYB?tag=blueprintam-20&linkCode=osi&th=1&psc=1",
+      "dimensions": "300x150x3mm",
+      "position3d": {
+        "x": 150,
+        "y": 1.5,
+        "z": 75
+      },
+      "boundingBox": {
+        "depth": 150,
+        "width": 300,
+        "height": 3
+      },
+      "description": "Flat acrylic sheet serving as the primary structural base for all components, providing a stable platform.",
+      "productName": "Acrylic Sheet Black",
+      "purchaseUrl": "https://www.adafruit.com/product/4749",
+      "aliexpressUrl": "https://s.click.aliexpress.com/s/fwx308cRD9Eny963e3KDdYxyIpNj8TXVr7saiF9Um5rMUg1kZtJALLnfa2LNXtiVgnxdD8Og6MmvwBoxhnSYQGM6r0c08U4TfX8DFGo7vviCuu3q62Q60OAhRZcqm3G8PtwM69xY7TOEWRrvulP5ukZQ4uQbBBtaVsdr6EffAqVmp3O5GyUANU2DoA3dJufNhDfh7KOlLgKIvRVhDxRESHLmea6fTE26gLUqKEUuuizJiLENrCbax94DZHDu8WhaXM9vQ86gzlqceNPO5w3vwXm4VrBF3x2lAMEl06wgNdTSMiT7cNG4HIdW0JxH9N4djOLK8Mhb572LjYm6hoGFn0OPHFSVYkZ2W8p9w9927QJ9dAiimM3XLnqEtmbwe2vMh5AFRpyXbu8JrX1gWQG4VNEoTilS40fnv2tS0WCeL47o58DsmOS6uAfDCWUy6TxOtdzWZiHL3n5Qaz8dfm7Unxe4hpZZpfJp1lpzV1HDBTnbvxSKwauRuKYuM2fgbN1vjac9Ibtr7qqEUO5BEmOlq4FDmPIsCYMNzFoxPbNQXOFaoUtqSTYe58mbfxIc2tsZ0sgflPyVdYzD09G5Sbu10c7pe2249EeIZKiwIZC1UH0rp4L9lzFpqMVBGknjs2nEv6OjdgEK9eBcy2drqGFKr5jdZKEr4EOsirRNP2zXlgw2juU3B0KMAUr2R41nJOsx3oUQOIoayU9CGXRvIGXsf0RV9IQjqmV3C6souxXMj0DXuj9rXH1DSFaP2nK2B3mAIx4fcKTkMo1zAX7eZebCW6ypX3CBWT4mN0AwQ9mSmcAUugIrIKEg6q20cFFSynT0rAvjDR2ZaA9cBIbykKDwO7Z3Y5JnIO6sL3nwuevN9wElfe3sAvWj5F9eMW5oF6Nr92QMhHkcq39lbrdnDFsDL4c6ksjegyf7UkQ7wzhGUWvXQ3mfV3VzPpBu53STT8BGwrBZj8m1UvBoh6v2eP",
+      "estimatedCost": 12
+    },
+    {
+      "id": "thermal_printer_module",
+      "name": "Thermal Receipt Printer",
+      "pins": [
+        "RX",
+        "TX",
+        "GND",
+        "VCC"
+      ],
+      "type": "actuator",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Mini+Thermal+Printer+TTL+Serial&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "electrical",
+      "imageUrl": "https://ae-pic-a1.aliexpress-media.com/kf/Sa0d2c873dcc644778ac3f1d6c9b324b3D.jpg",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Printing Speed",
+            "value": "50-80 mm/s"
+          },
+          {
+            "label": "Operating Voltage",
+            "value": "5V-9V DC"
+          },
+          {
+            "label": "Peak Current Draw (Printing)",
+            "value": "1.5A - 2.5A"
+          },
+          {
+            "label": "Idle Current Draw",
+            "value": "10mA - 50mA"
+          },
+          {
+            "label": "Paper Width",
+            "value": "57-58 mm"
+          },
+          {
+            "label": "Interface",
+            "value": "TTL Serial (9600-115200 bps)"
+          },
+          {
+            "label": "Weight",
+            "value": "Approx. 150-200g"
+          },
+          {
+            "label": "Resolution",
+            "value": "8 dots/mm (203 DPI)"
+          }
+        ],
+        "summary": "This is a compact, low-power thermal printer designed for embedding into projects. It utilizes a TTL serial interface for easy communication with microcontrollers to print text and simple graphics. Ideal for generating small receipts or data logs on standard thermal paper.",
+        "sourcing": []
+      },
+      "position3d": {
+        "x": 80,
+        "y": 28,
+        "z": 75
+      },
+      "boundingBox": {
+        "depth": 60,
+        "width": 100,
+        "height": 50
+      },
+      "description": "Compact thermal printer for printing text and graphics on receipt paper.",
+      "productName": "Mini Thermal Printer TTL Serial",
+      "purchaseUrl": "https://www.adafruit.com/product/597",
+      "estimatedCost": 35
+    },
+    {
+      "id": "dowel_rod_spool_feed",
+      "name": "Feed Spool Dowel Rod",
+      "type": "mechanism",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Wooden+Dowel+Rod+10mm+x+100mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": 50,
+        "y": 60,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 10,
+        "height": 10
+      },
+      "description": "Dowel rod for holding the feed spool.",
+      "productName": "Wooden Dowel Rod 10mm x 100mm",
+      "purchaseUrl": "https://www.amazon.com/wooden-dowel-rod-10mm/s?k=wooden+dowel+rod+10mm",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "dowel_rod_spool_takeup",
+      "name": "Take-Up Spool Dowel Rod",
+      "type": "mechanism",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Wooden+Dowel+Rod+10mm+x+100mm&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": 250,
+        "y": 60,
+        "z": 20
+      },
+      "boundingBox": {
+        "depth": 100,
+        "width": 10,
+        "height": 10
+      },
+      "description": "Dowel rod for holding the take-up spool.",
+      "productName": "Wooden Dowel Rod 10mm x 100mm",
+      "purchaseUrl": "https://www.amazon.com/wooden-dowel-rod-10mm/s?k=wooden+dowel+rod+10mm",
+      "estimatedCost": 0.5
+    },
+    {
+      "id": "plexiglass_strip_guides",
+      "name": "Plexiglass Strip Guides",
+      "type": "structural",
+      "ebayUrl": "https://www.ebay.com/sch/i.html?_nkw=Acrylic+Sheet+2mm+thick&_sacat=0&_from=R40&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339153059&customid=blueprint&toolid=10001&mkevt=1",
+      "category": "mechanical",
+      "quantity": 1,
+      "position3d": {
+        "x": 130,
+        "y": 15,
+        "z": 75
+      },
+      "boundingBox": {
+        "depth": 20,
+        "width": 50,
+        "height": 2
+      },
+      "description": "Cut pieces of acrylic sheet used as tape guides.",
+      "productName": "Acrylic Sheet 2mm thick",
+      "purchaseUrl": "https://www.amazon.com/Acrylic-Sheet-2mm-thick/s?k=Acrylic+Sheet+2mm+thick",
+      "estimatedCost": 7
+    },
+    {
+      "id": "reader_alignment_bracket",
+      "name": "Optical Reader Alignment Bracket",
+      "type": "3d_printed",
+      "category": "mechanical",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "Recommended Layer Height",
+            "value": "0.15 mm"
+          },
+          {
+            "label": "Infill Percentage",
+            "value": "25% (cubic or rectilinear)"
+          },
+          {
+            "label": "Support Requirements",
+            "value": "Required for overhangs exceeding 45 degrees, especially for sensor mounting features"
+          },
+          {
+            "label": "Print Orientation",
+            "value": "Orient flat on build plate to maximize Z-axis strength and critical dimension accuracy"
+          },
+          {
+            "label": "Estimated Print Time",
+            "value": "3-5 hours (depending on size and printer speed)"
+          },
+          {
+            "label": "Dimensional Specifications",
+            "value": "Precision-engineered to securely mount the optical reader sensor and illumination LED, ensuring precise alignment over the paper path with specific clearances for optimal function."
+          }
+        ],
+        "summary": "This custom 3D printed bracket is a mechanical component designed to rigidly hold the single optical reader sensor and its illumination LED. Its primary function is to maintain precise alignment of these components over the paper path, which is critical for accurate data acquisition from the optical tape.",
+        "sourcing": []
+      },
+      "description": "3D printed bracket to hold the single optical reader sensor and illumination LED in precise alignment over the paper path.",
+      "productName": "Custom 3D Printed Bracket",
+      "purchaseUrl": "N/A",
+      "estimatedCost": 2
+    }
+  ],
+  "notes": [
+    "low-cost experimental system",
+    "visible moving strip",
+    "modular and adjustable",
+    "tabletop device",
+    "CRT television output",
+    "proof of concept",
+    "reel-to-reel aesthetic",
+    "thermal paper compatible"
+  ],
+  "projectName": "Optical Tape Prototype",
+  "mechLayoutHash": "base_plate:structural:300x150x3mm,dowel_rod_spool_feed:mechanism:,dowel_rod_spool_takeup:mechanism:,electrolytic_capacitor_power:power:8x8x12mm,illumination_led:actuator:5x5x8mm,illumination_led_2:actuator:,main_mcu:mcu:68.6x53.4x15mm,optical_reader_sensor:sensor:5x5x6mm,optical_reader_sensor_2:sensor:,plexiglass_strip_guides:structural:,system_power_supply:power:70x40x30mm,thermal_printer_module:actuator:,trimmer_potentiometer_reader:module:10x10x5mm,universal_project_box:enclosure:::dowel_rod_spool_feed|base_plate;dowel_rod_spool_takeup|base_plate;illumination_led_2|base_plate;illumination_led|base_plate;optical_reader_sensor_2|base_plate;optical_reader_sensor|base_plate;plexiglass_strip_guides|base_plate;thermal_printer_module|base_plate",
+  "originalPrompt": "## Project Pitch: Optical Data Storage Prototype\n\nDesign and build a low-cost experimental system that demonstrates how small amounts of digital information can be **encoded, physically recorded, stored, optically read, decoded, and displayed using light-based technology**.\n\nThe prototype combines electronics, optics, mechanical motion, and physical storage media into a single working device. Instead of keeping information exclusively inside electronic memory or magnetic storage, the system converts text or small data files into a pattern of controlled light exposures. These exposures create visible or detectable marks on a moving strip of light- or heat-sensitive material. The strip then becomes a physical data carrier that can be removed, preserved, and scanned again later. \n\n### Core Concept\n\nThe project is essentially a small experimental optical tape drive.\n\nA user enters a short message or small piece of data. An Arduino converts that information into binary or pulse-based instructions. An LED or laser, controlled by a driver circuit, exposes a moving strip of thermal, photosensitive, or photochromic material. The resulting sequence of dark and light areas represents the stored information.\n\nTo retrieve the data, the strip passes through an optical reader containing a photodiode, phototransistor, or similar light sensor. The sensor measures the changing brightness of the strip and converts those changes into electrical voltage levels. Arduino decoding software identifies the timing and pattern of the marks, reconstructs the original data, and displays the recovered text on a CRT television through a composite-video TVout circuit.\n\n### System Workflow\n\n**Input → Encoding → Optical Writing → Physical Storage → Optical Reading → Decoding → Display**\n\n1. **Input**\n   The user provides text or another small data package.\n\n2. **Encoder**\n   An Arduino Uno converts each character into binary data or another compact pulse sequence. Timing, pulse width, and spacing are controlled through software.\n\n3. **Light writer**\n   An LED or focused laser is switched according to the encoded data. A transistor or driver circuit supplies enough controlled power to the light source.\n\n4. **Storage medium**\n   A paper or film strip moves beneath the writer. The light source produces a series of detectable marks across the strip. Early tests may use thermal paper with a sufficiently concentrated heat-producing light source, while later versions could use genuinely photosensitive or photochromic media.\n\n5. **Motion system**\n   Rollers and a DC motor move the strip at a steady speed. The motion may initially be manual, followed by a motorized version with speed control.\n\n6. **Optical reader**\n   A light source shines onto or through the recorded strip. A photodiode or phototransistor detects the difference between marked and unmarked sections.\n\n7. **Decoder**\n   The Arduino measures the sensor signal, separates marks into data units, checks synchronization, and converts the detected pattern back into characters.\n\n8. **Output**\n   The recovered message is displayed on a CRT television through an Arduino-generated composite video signal. A successful demonstration could display a message such as: **“IF YOU READ THIS, THIS IS WORKING.”**\n\n## Phase-One Prototype\n\nThe first version should prioritize reliability and proof of concept rather than storage capacity or speed.\n\nIts objective is to demonstrate one complete write–store–read cycle:\n\n* Enter a short message.\n* Encode it into a simple binary pattern.\n* Write that pattern onto a physical strip.\n* Move the strip through an optical reader.\n* Recover the original message.\n* Display it on the CRT without manually re-entering the data.\n\nA practical first test could store only a few characters, such as **“HELLO”**. Each bit could be represented by a fixed-length section of the strip:\n\n* Dark mark = binary 1\n* Light or blank section = binary 0\n\nThe system could include longer synchronization marks at the beginning of the strip so the decoder can determine where the data begins and estimate the strip’s movement speed.\n\n## Main Hardware\n\nThe prototype would contain five major subsystems:\n\n**Control electronics**\n\n* Arduino Uno\n* Breadboard\n* Wiring\n* Power supply\n* Encoding and decoding software\n\n**Optical writer**\n\n* High-brightness LED or low-power laser module\n* Current-limiting resistor\n* Transistor or MOSFET driver\n* Adjustable mounting bracket\n\n**Optical reader**\n\n* Photodiode, phototransistor, or light-dependent sensor\n* Fixed illumination source\n* Resistors and signal-conditioning components\n* Optional comparator for cleaner digital readings\n* Light-blocking enclosure to reduce interference\n\n**Mechanical transport**\n\n* DC gear motor\n* Motor-driver board\n* Rollers or spools\n* Strip guides\n* Tensioning mechanism\n* Frame or base plate\n\n**Output system**\n\n* Arduino TVout circuit\n* Composite video connection\n* CRT television or monitor\n\n## Design Priorities\n\nThe prototype should be modular, visible, and easy to adjust. The writer, strip transport, sensor, and display electronics should be mounted as separate sections so each subsystem can be tested independently.\n\nImportant adjustable features should include:\n\n* Writer brightness or laser power\n* Exposure duration\n* Strip movement speed\n* Distance between writer and material\n* Sensor sensitivity\n* Detection threshold\n* Width of each stored bit\n* Spacing between characters\n* Ambient-light shielding\n\nThe visual design can resemble a miniature reel-to-reel tape machine, receipt printer, or early experimental computer-storage device. The moving strip should remain visible so viewers can physically see the encoded information passing from the writing section to the reading section.\n\n## Technical Challenges\n\nThe greatest challenge is maintaining synchronization between the physical movement of the strip and the electronic timing of the data.\n\nSmall variations in motor speed could stretch or compress the recorded pattern. To compensate, the system should use generous bit spacing, start markers, and timing references. Later versions could use an encoder wheel to measure the strip’s actual movement rather than assuming the motor always runs at the same speed.\n\nAlignment is also critical. The writer must remain centered over the data track, and the sensor must scan the same track during playback. Adjustable rails or guides would help keep the material positioned consistently.\n\nAmbient light and electronic noise may cause inconsistent sensor readings. The optical reader should therefore be enclosed, calibrated before each scan, and designed to distinguish clearly between marked and unmarked regions.\n\nThe storage material may respond unevenly. Thermal paper, for example, primarily changes through heating rather than ordinary illumination, so an LED may not create reliable permanent marks. A focused laser, thermal printhead, photosensitive paper, photographic film, or photochromic material may be more suitable depending on the intended definition of “light-written” storage.\n\n## Development Roadmap\n\n### Stage 1: Stationary detection test\n\nCreate alternating black and white marks manually and verify that the optical sensor can detect them reliably.\n\n### Stage 2: Moving-strip reader\n\nMove the marked strip manually through the reader and decode a simple sequence of ones and zeros.\n\n### Stage 3: Electronic writer\n\nUse the Arduino-controlled light source to produce regular test marks on the selected material.\n\n### Stage 4: Complete data loop\n\nEncode and write a short message, then scan and reconstruct it automatically.\n\n### Stage 5: Motorized transport\n\nAdd controlled rollers, motor speed regulation, synchronization marks, and repeatable alignment.\n\n### Stage 6: Enclosed prototype\n\nBuild a compact housing with separate input, writing, storage, reading, and display sections.\n\n## Budget\n\nThe initial project is intended to use inexpensive and reusable parts. The Arduino and some electronic components may already be available. Individual writer, reader, motion, and material sections could each be assembled relatively cheaply, while a realistic overall prototype budget—including mechanical construction, replacement media, mounting hardware, experimentation, and spare components—is approximately **$75–$150**.\n\n## Future Development\n\nOnce the basic concept is proven, the system could be expanded into a more sophisticated optical storage platform.\n\nPossible improvements include:\n\n* Multiple parallel data tracks\n* Smaller marks and higher data density\n* Error-detection and error-correction codes\n* Motor encoder feedback\n* Automatic calibration\n* Reusable photochromic materials\n* Color-based multilevel encoding\n* Multiple brightness levels per data cell\n* Faster scanning\n* Camera-based reading\n* Compact cartridge-style media\n* Image and sensor-data storage\n* A self-contained camera that records information directly onto optical media\n\nThe long-term concept is not simply a paper barcode printer. It is an experimental platform for exploring how digital data can be transformed into a physically visible optical pattern, stored outside conventional electronic memory, and later reconstructed by a purpose-built reader.\n\n## Final Prototype Goal\n\nDeliver a working tabletop device that accepts a short digital message, records it as a physical optical pattern on a moving strip, preserves that strip as removable storage, reads it back through an optical sensor, reconstructs the original information, and displays the decoded result on a CRT.\n\nThe success criterion is simple:\n\n> Information enters electronically, becomes a physical pattern created through controlled light exposure, survives independently on the material, and is later recovered automatically by the machine.\n\n\nHowever, I just want to make this idea real even if its just a prototype; I have $135. I just want something that works. Like maybe with a recipet thermal printer. SOmethign taht works with this concept. Please.",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "3D print the Optical Reader Alignment Bracket",
+          "detail": {
+            "tip": "Print a calibration cube first to ensure your printer's dimensional accuracy for tight component fits.",
+            "steps": [
+              "Load PLA filament into your 3D printer.",
+              "Orient the bracket model for optimal strength and minimal support material.",
+              "Configure print settings for 0.2mm layer height and 20% infill density.",
+              "Print one 'Optical Reader Alignment Bracket'.",
+              "Carefully remove any support material and deburr sharp edges.",
+              "Test fit the 'Optical Reader Phototransistor' and 'Reader Illumination LED' into their designated slots in the bracket."
+            ],
+            "summary": "3D print the custom Optical Reader Alignment Bracket."
+          },
+          "partIds": [
+            "reader_alignment_bracket"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Cut and prepare dowel rods for feed and take-up spools",
+          "detail": {
+            "tip": "Mark the cut lines clearly with a pencil before cutting to ensure accurate lengths.",
+            "steps": [
+              "Measure two 100mm lengths on a 10mm diameter wooden dowel rod.",
+              "Cut the dowel rod to yield two 100mm pieces for the 'Feed Spool Dowel Rod' and 'Take-Up Spool Dowel Rod'.",
+              "Smooth any rough edges or splinters on the cut ends of both dowel rods using fine-grit sandpaper."
+            ],
+            "summary": "Cut and prepare two 100mm dowel rods for spools."
+          },
+          "partIds": [
+            "dowel_rod_spool_feed",
+            "dowel_rod_spool_takeup"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Prepare and deburr Plexiglass Strip Guides if necessary",
+          "detail": {
+            "tip": "When sanding acrylic, use a light touch and sand in one direction to prevent scratching the surface.",
+            "steps": [
+              "Inspect the cut edges of the Plexiglass Strip Guides for any sharp points or burrs.",
+              "Using fine-grit sandpaper (e.g., 220-400 grit), gently sand all cut edges until smooth.",
+              "Wipe down the Plexiglass Strip Guides with a clean cloth to remove any dust or debris."
+            ],
+            "summary": "Deburr and smooth edges of the Plexiglass Strip Guides."
+          },
+          "partIds": [
+            "plexiglass_strip_guides"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Connect Main Controller to System Power Supply",
+          "partIds": [
+            "main_mcu",
+            "system_power_supply"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Wire Power Decoupling Capacitor to System Power Supply",
+          "partIds": [
+            "electrolytic_capacitor_power",
+            "system_power_supply"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Connect Reader Illumination LED to Main Controller (5V power)",
+          "partIds": [
+            "illumination_led",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Wire Optical Reader Phototransistor to Main Controller (5V power, Analog A0)",
+          "partIds": [
+            "optical_reader_sensor",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Connect Reader Sensitivity Potentiometer to Main Controller (5V power, Analog A1)",
+          "partIds": [
+            "trimmer_potentiometer_reader",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Wire Thermal Receipt Printer to Main Controller (UART RX/TX, 5V power, GND)",
+          "partIds": [
+            "thermal_printer_module",
+            "main_mcu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Verify main power supply and decoupling capacitor connections with multimeter",
+          "partIds": [
+            "system_power_supply",
+            "electrolytic_capacitor_power",
+            "main_mcu"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Upload basic firmware to Main Controller to test digital I/O for LED and UART for printer",
+          "partIds": [
+            "main_mcu",
+            "illumination_led",
+            "thermal_printer_module"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test analog input functionality with the Reader Sensitivity Potentiometer and Optical Reader Phototransistor",
+          "partIds": [
+            "main_mcu",
+            "trimmer_potentiometer_reader",
+            "optical_reader_sensor"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Perform initial calibration for the phototransistor's analog reading range using the potentiometer",
+          "partIds": [
+            "optical_reader_sensor",
+            "trimmer_potentiometer_reader",
+            "main_mcu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount Main Controller to the Base Plate using double-sided tape",
+          "partIds": [
+            "main_mcu",
+            "base_plate"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Attach Feed and Take-Up Spool Dowel Rods to Base Plate using L-brackets and M3 bolts",
+          "partIds": [
+            "dowel_rod_spool_feed",
+            "dowel_rod_spool_takeup",
+            "base_plate"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Secure Plexiglass Strip Guides to Base Plate with M3 bolts",
+          "partIds": [
+            "plexiglass_strip_guides",
+            "base_plate"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Mount Thermal Receipt Printer Module to the Base Plate using double-sided tape",
+          "partIds": [
+            "thermal_printer_module",
+            "base_plate"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Affix Reader Sensitivity Potentiometer to Base Plate with hot glue",
+          "partIds": [
+            "trimmer_potentiometer_reader",
+            "base_plate"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Glue Optical Reader Alignment Bracket to Base Plate",
+          "partIds": [
+            "reader_alignment_bracket",
+            "base_plate"
+          ]
+        },
+        {
+          "id": "assemble_7",
+          "title": "Insert Optical Reader Phototransistor and Illumination LED into Alignment Bracket (press fit/hot glue)",
+          "partIds": [
+            "optical_reader_sensor",
+            "illumination_led",
+            "reader_alignment_bracket"
+          ]
+        },
+        {
+          "id": "assemble_8",
+          "title": "Route and secure all electrical wiring, ensuring strain relief and tidy organization",
+          "partIds": [
+            "main_mcu",
+            "system_power_supply",
+            "illumination_led",
+            "optical_reader_sensor",
+            "electrolytic_capacitor_power",
+            "trimmer_potentiometer_reader",
+            "thermal_printer_module"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "The Optical Tape Prototype is a tabletop reel-to-reel system designed to optically read data from a moving thermal paper strip using an LED and phototransistor. A main controller processes this information for output to a CRT television, serving as a low-cost proof-of-concept for data archival or retrieval.",
+  "imagePromptSnapshot": {
+    "tags": [
+      "low-cost experimental system",
+      "visible moving strip",
+      "modular and adjustable",
+      "tabletop device",
+      "CRT television output",
+      "proof of concept",
+      "reel-to-reel aesthetic",
+      "thermal paper compatible"
+    ],
+    "description": "Project idea: ## Project Pitch: Optical Data Storage Prototype\n\nDesign and build a low-cost experimental system that demonstrates how small amounts of digital information can be **encoded, physically recorded, stored, optically read, decoded, and displayed using light-based technology**.\n\nThe prototype combines electronics, optics, mechanical motion, and physical storage media into a single working device. Instead of keeping information exclusively inside electronic memory or magnetic storage, the system converts text or small data files into a pattern of controlled light exposures. These exposures create visible or detectable marks on a moving strip of light- or heat-sensitive material. The strip then becomes a physical data carrier that can be removed, preserved, and scanned again later. \n\n### Core Concept\n\nThe project is essentially a small experimental optical tape drive.\n\nA user enters a short message or small piece of data. An Arduino converts that information into binary or pulse-based instructions. An LED or laser, controlled by a driver circuit, exposes a moving strip of thermal, photosensitive, or photochromic material. The resulting sequence of dark and light areas represents the stored information.\n\nTo retrieve the data, the strip passes through an optical reader containing a photodiode, phototransistor, or similar light sensor. The sensor measures the changing brightness of the strip and converts those changes into electrical voltage levels. Arduino decoding software identifies the timing and pattern of the marks, reconstructs the original data, and displays the recovered text on a CRT television through a composite-video TVout circuit.\n\n### System Workflow\n\n**Input → Encoding → Optical Writing → Physical Storage → Optical Reading → Decoding → Display**\n\n1. **Input**\n   The user provides text or another small data package.\n\n2. **Encoder**\n   An Arduino Uno converts each character into binary data or another compact pulse sequence. Timing, pulse width, and spacing are controlled through software.\n\n3. **Light writer**\n   An LED or focused laser is switched according to the encoded data. A transistor or driver circuit supplies enough controlled power to the light source.\n\n4. **Storage medium**\n   A paper or film strip moves beneath the writer. The light source produces a series of detectable marks across the strip. Early tests may use thermal paper with a sufficiently concentrated heat-producing light source, while later versions could use genuinely photosensitive or photochromic media.\n\n5. **Motion system**\n   Rollers and a DC motor move the strip at a steady speed. The motion may initially be manual, followed by a motorized version with speed control.\n\n6. **Optical reader**\n   A light source shines onto or through the recorded strip. A photodiode or phototransistor detects the difference between marked and unmarked sections.\n\n7. **Decoder**\n   The Arduino measures the sensor signal, separates marks into data units, checks synchronization, and converts the detected pattern back into characters.\n\n8. **Output**\n   The recovered message is displayed on a CRT television through an Arduino-generated composite video signal. A successful demonstration could display a message such as: **“IF YOU READ THIS, THIS IS WORKING.”**\n\n## Phase-One Prototype\n\nThe first version should prioritize reliability and proof of concept rather than storage capacity or speed.\n\nIts objective is to demonstrate one complete write–store–read cycle:\n\n* Enter a short message.\n* Encode it into a simple binary pattern.\n* Write that pattern onto a physical strip.\n* Move the strip through an optical reader.\n* Recover the original message.\n* Display it on the CRT without manually re-entering the data.\n\nA practical first test could store only a few characters, such as **“HELLO”**. Each bit could be represented by a fixed-length section of the strip:\n\n* Dark mark = binary 1\n* Light or blank section = binary 0\n\nThe system could include longer synchronization marks at the beginning of the strip so the decoder can determine where the data begins and estimate the strip’s movement speed.\n\n## Main Hardware\n\nThe prototype would contain five major subsystems:\n\n**Control electronics**\n\n* Arduino Uno\n* Breadboard\n* Wiring\n* Power supply\n* Encoding and decoding software\n\n**Optical writer**\n\n* High-brightness LED or low-power laser module\n* Current-limiting resistor\n* Transistor or MOSFET driver\n* Adjustable mounting bracket\n\n**Optical reader**\n\n* Photodiode, phototransistor, or light-dependent sensor\n* Fixed illumination source\n* Resistors and signal-conditioning components\n* Optional comparator for cleaner digital readings\n* Light-blocking enclosure to reduce interference\n\n**Mechanical transport**\n\n* DC gear motor\n* Motor-driver board\n* Rollers or spools\n* Strip guides\n* Tensioning mechanism\n* Frame or base plate\n\n**Output system**\n\n* Arduino TVout circuit\n* Composite video connection\n* CRT television or monitor\n\n## Design Priorities\n\nThe prototype should be modular, visible, and easy to adjust. The writer, strip transport, sensor, and display electronics should be mounted as separate sections so each subsystem can be tested independently.\n\nImportant adjustable features should include:\n\n* Writer brightness or laser power\n* Exposure duration\n* Strip movement speed\n* Distance between writer and material\n* Sensor sensitivity\n* Detection threshold\n* Width of each stored bit\n* Spacing between characters\n* Ambient-light shielding\n\nThe visual design can resemble a miniature reel-to-reel tape machine, receipt printer, or early experimental computer-storage device. The moving strip should remain visible so viewers can physically see the encoded information passing from the writing section to the reading section.\n\n## Technical Challenges\n\nThe greatest challenge is maintaining synchronization between the physical movement of the strip and the electronic timing of the data.\n\nSmall variations in motor speed could stretch or compress the recorded pattern. To compensate, the system should use generous bit spacing, start markers, and timing references. Later versions could use an encoder wheel to measure the strip’s actual movement rather than assuming the motor always runs at the same speed.\n\nAlignment is also critical. The writer must remain centered over the data track, and the sensor must scan the same track during playback. Adjustable rails or guides would help keep the material positioned consistently.\n\nAmbient light and electronic noise may cause inconsistent sensor readings. The optical reader should therefore be enclosed, calibrated before each scan, and designed to distinguish clearly between marked and unmarked regions.\n\nThe storage material may respond unevenly. Thermal paper, for example, primarily changes through heating rather than ordinary illumination, so an LED may not create reliable permanent marks. A focused laser, thermal printhead, photosensitive paper, photographic film, or photochromic material may be more suitable depending on the intended definition of “light-written” storage.\n\n## Development Roadmap\n\n### Stage 1: Stationary detection test\n\nCreate alternating black and white marks manually and verify that the optical sensor can detect them reliably.\n\n### Stage 2: Moving-strip reader\n\nMove the marked strip manually through the reader and decode a simple sequence of ones and zeros.\n\n### Stage 3: Electronic writer\n\nUse the Arduino-controlled light source to produce regular test marks on the selected material.\n\n### Stage 4: Complete data loop\n\nEncode and write a short message, then scan and reconstruct it automatically.\n\n### Stage 5: Motorized transport\n\nAdd controlled rollers, motor speed regulation, synchronization marks, and repeatable alignment.\n\n### Stage 6: Enclosed prototype\n\nBuild a compact housing with separate input, writing, storage, reading, and display sections.\n\n## Budget\n\nThe initial project is intended to use inexpensive and reusable parts. The Arduino and some electronic components may already be available. Individual writer, reader, motion, and material sections could each be assembled relatively cheaply, while a realistic overall prototype budget—including mechanical construction, replacement media, mounting hardware, experimentation, and spare components—is approximately **$75–$150**.\n\n## Future Development\n\nOnce the basic concept is proven, the system could be expanded into a more sophisticated optical storage platform.\n\nPossible improvements include:\n\n* Multiple parallel data tracks\n* Smaller marks and higher data density\n* Error-detection and error-correction codes\n* Motor encoder feedback\n* Automatic calibration\n* Reusable photochromic materials\n* Color-based multilevel encoding\n* Multiple brightness levels per data cell\n* Faster scanning\n* Camera-based reading\n* Compact cartridge-style media\n* Image and sensor-data storage\n* A self-contained camera that records information directly onto optical media\n\nThe long-term concept is not simply a paper barcode printer. It is an experimental platform for exploring how digital data can be transformed into a physically visible optical pattern, stored outside conventional electronic memory, and later reconstructed by a purpose-built reader.\n\n## Final Prototype Goal\n\nDeliver a working tabletop device that accepts a short digital message, records it as a physical optical pattern on a moving strip, preserves that strip as removable storage, reads it back through an optical sensor, reconstructs the original information, and displays the decoded result on a CRT.\n\nThe success criterion is simple:\n\n> Information enters electronically, becomes a physical pattern created through controlled light exposure, survives independently on the material, and is later recovered automatically by the machine.\n\n\nHowever, I just want to make this idea real even if its just a prototype; I have $135. I just want something that works. Like maybe with a recipet thermal printer. SOmethign taht works with this concept. Please.\n\nDesign notes: low-cost experimental system, visible moving strip, modular and adjustable, tabletop device, CRT television output, proof of concept, reel-to-reel aesthetic, thermal paper compatible\n\nElectrical components (current): Main Controller (mcu, 68.6x53.4x15mm); 2x power: DC Power Adapter, Power Decoupling Capacitor; 3x actuator: Data Writer LED, Reader Illumination LED, Strip Transport DC Motor; 4x module: LED Driver Transistor, DC Motor Driver, Composite Video Output Circuit, Reader Sensitivity Potentiometer; Optical Reader Phototransistor (sensor, 5x5x6mm)\n\nMechanical/structural parts (current): Main Base Plate (structural, 300x150x3mm); 16x 3d_printed: Motor Mount Bracket, Drive Roller, Idler Roller (Writer Side), Idler Roller (Reader Side) +12 more; 2x mechanism: Stainless Steel Shafts for Rollers, Flanged Ball Bearings; 5x misc: M3 Hex Nuts, M3 Washers, M3x8mm Machine Screws, M3x12mm Machine Screws +1 more\n\nAssembly: Motor Mount Bracket → Main Base Plate (M3 bolts); Drive Roller → Stainless Steel Shafts for Rollers (press fit/set screw); Idler Roller (Writer Side) → Stainless Steel Shafts for Rollers (press fit/set screw); Idler Roller (Reader Side) → Stainless Steel Shafts for Rollers (press fit/set screw); Feed Spool Holder → Main Base Plate (M3 bolts); Take-Up Spool Holder → Main Base Plate (M3 bolts); Adjustable Writer LED Mount → Main Base Plate (M3 bolts); Optical Reader Sensor Housing → Main Base Plate (M3 bolts); Reader Illumination LED Mount → Optical Reader Sensor Housing (M3 bolts); Strip Guide (Writer Inlet) → Main Base Plate (M3 bolts); Strip Guide (Reader Outlet) → Main Base Plate (M3 bolts); Stainless Steel Shafts for Rollers → Flanged Ball Bearings (press fit); Flanged Ball Bearings → Main Base Plate (M3 bolts/press fit into frame); Main Controller Mount → Main Base Plate (M3 bolts); LED Driver Transistor Mount → Main Base Plate (M3 bolts) (+12 more connections)"
+  },
+  "instructionPreamble": {
+    "tools": [
+      "M3 hex key",
+      "Hot glue gun",
+      "Wire strippers",
+      "Soldering iron with fine tip",
+      "Solder",
+      "Multimeter",
+      "FDM 3D printer (for bracket)",
+      "Utility knife or scissors (for tape)",
+      "Small Phillips screwdriver (for L-brackets, if not M3 hex)"
+    ],
+    "assumptions": [
+      "Familiarity with basic electronics and wiring practices",
+      "Understanding of microcontrollers and their programming environment (e.g., Arduino IDE for main_mcu)",
+      "Access to a computer for firmware upload and debugging",
+      "Appropriate 7.5V DC power supply with barrel jack compatible with system_power_supply"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Arduino VIN Power",
+      "source": "system_power_supply",
+      "target": "main_mcu",
+      "current": "1A",
+      "voltage": "7.5V"
+    },
+    {
+      "type": "power",
+      "label": "Main Power Decoupling",
+      "source": "system_power_supply",
+      "target": "electrolytic_capacitor_power",
+      "current": "1A",
+      "voltage": "7.5V"
+    },
+    {
+      "type": "power",
+      "label": "Main Power Decoupling",
+      "source": "electrolytic_capacitor_power",
+      "target": "system_power_supply",
+      "current": "1A",
+      "voltage": "7.5V"
+    },
+    {
+      "type": "power",
+      "label": "Illumination LED Power",
+      "source": "main_mcu",
+      "target": "illumination_led",
+      "current": "20mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "Phototransistor Collector VCC",
+      "source": "main_mcu",
+      "target": "optical_reader_sensor",
+      "current": "10mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "Phototransistor Analog Signal",
+      "source": "optical_reader_sensor",
+      "target": "main_mcu",
+      "protocol": "analog",
+      "sourcePin": "Emitter",
+      "targetPin": "Analog A0"
+    },
+    {
+      "type": "power",
+      "label": "Potentiometer VCC",
+      "source": "trimmer_potentiometer_reader",
+      "target": "main_mcu",
+      "current": "5mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "data",
+      "label": "Reader Sensitivity Adjust",
+      "source": "trimmer_potentiometer_reader",
+      "target": "main_mcu",
+      "protocol": "analog",
+      "sourcePin": "Wiper",
+      "targetPin": "Analog A1"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "thermal_printer_module",
+      "protocol": "UART",
+      "sourcePin": "TX",
+      "targetPin": "RX"
+    },
+    {
+      "type": "data",
+      "source": "main_mcu",
+      "target": "thermal_printer_module",
+      "protocol": "UART",
+      "sourcePin": "RX",
+      "targetPin": "TX"
+    },
+    {
+      "type": "power",
+      "source": "main_mcu",
+      "target": "thermal_printer_module",
+      "voltage": "5V_OUT_UART_HEADER"
+    },
+    {
+      "type": "power",
+      "source": "main_mcu",
+      "target": "thermal_printer_module",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "L-brackets/M3 bolts",
+      "source": "dowel_rod_spool_feed",
+      "target": "base_plate"
+    },
+    {
+      "label": "L-brackets/M3 bolts",
+      "source": "dowel_rod_spool_takeup",
+      "target": "base_plate"
+    },
+    {
+      "label": "M3 bolts",
+      "source": "plexiglass_strip_guides",
+      "target": "base_plate"
+    },
+    {
+      "label": "double-sided tape",
+      "source": "main_mcu",
+      "target": "base_plate"
+    },
+    {
+      "label": "double-sided tape",
+      "source": "thermal_printer_module",
+      "target": "base_plate"
+    },
+    {
+      "label": "hot glue",
+      "source": "trimmer_potentiometer_reader",
+      "target": "base_plate"
+    },
+    {
+      "label": "hot glue",
+      "source": "reader_alignment_bracket",
+      "target": "base_plate"
+    },
+    {
+      "label": "press fit / hot glue",
+      "source": "optical_reader_sensor",
+      "target": "reader_alignment_bracket"
+    },
+    {
+      "label": "press fit / hot glue",
+      "source": "illumination_led",
+      "target": "reader_alignment_bracket"
+    }
+  ],
+  "projectId": "84f8bad8-67ae-4984-abd7-1a6eb630da76"
+}

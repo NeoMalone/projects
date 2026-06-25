@@ -1,0 +1,97 @@
+[
+  {
+    "type": "power",
+    "label": "Arduino VIN Power",
+    "source": "system_power_supply",
+    "target": "main_mcu",
+    "current": "1A",
+    "voltage": "7.5V"
+  },
+  {
+    "type": "power",
+    "label": "Main Power Decoupling",
+    "source": "system_power_supply",
+    "target": "electrolytic_capacitor_power",
+    "current": "1A",
+    "voltage": "7.5V"
+  },
+  {
+    "type": "power",
+    "label": "Main Power Decoupling",
+    "source": "electrolytic_capacitor_power",
+    "target": "system_power_supply",
+    "current": "1A",
+    "voltage": "7.5V"
+  },
+  {
+    "type": "power",
+    "label": "Illumination LED Power",
+    "source": "main_mcu",
+    "target": "illumination_led",
+    "current": "20mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "Phototransistor Collector VCC",
+    "source": "main_mcu",
+    "target": "optical_reader_sensor",
+    "current": "10mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "Phototransistor Analog Signal",
+    "source": "optical_reader_sensor",
+    "target": "main_mcu",
+    "protocol": "analog",
+    "sourcePin": "Emitter",
+    "targetPin": "Analog A0"
+  },
+  {
+    "type": "power",
+    "label": "Potentiometer VCC",
+    "source": "trimmer_potentiometer_reader",
+    "target": "main_mcu",
+    "current": "5mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "data",
+    "label": "Reader Sensitivity Adjust",
+    "source": "trimmer_potentiometer_reader",
+    "target": "main_mcu",
+    "protocol": "analog",
+    "sourcePin": "Wiper",
+    "targetPin": "Analog A1"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "thermal_printer_module",
+    "protocol": "UART",
+    "sourcePin": "TX",
+    "targetPin": "RX"
+  },
+  {
+    "type": "data",
+    "source": "main_mcu",
+    "target": "thermal_printer_module",
+    "protocol": "UART",
+    "sourcePin": "RX",
+    "targetPin": "TX"
+  },
+  {
+    "type": "power",
+    "source": "main_mcu",
+    "target": "thermal_printer_module",
+    "voltage": "5V_OUT_UART_HEADER"
+  },
+  {
+    "type": "power",
+    "source": "main_mcu",
+    "target": "thermal_printer_module",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  }
+]
